@@ -9,8 +9,6 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.util.Collection;
 import java.util.Collections;
 
 @Configuration
@@ -23,19 +21,18 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.todoapp.todoapp.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfO());
+                .apiInfo(apiInfo());
     }
 
-    private ApiInfo apiInfO(){
+    private ApiInfo apiInfo(){
         return new ApiInfo(
                 "La api",
                 "una api rest en spring",
                 "v1",
                 "terms and service",
-                new Contact("yota win","www.example.com" , "yota_find@gmail.con"),
-                "andes lima", "licence api" , Collections.emptyList();
-
-        )
+                new Contact("yota win","www.example.com" , "jota_find@gmail.con"),
+                "licencia api", "api url de la licencia" , Collections.emptyList()
+        );
     }
 
 }
